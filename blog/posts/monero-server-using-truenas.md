@@ -12,15 +12,18 @@ authors:
 description: In this guide, we will walk you through setting up a very powerful Monero server with TrueNAS.
 schema_type: AnalysisNewsArticle
 ---
-
 # Creating a Tricked-Out Monero Server with TrueNAS
 
-In this guide, we will walk you through setting up a very powerful Monero server with TrueNAS. By completing these steps, you will be able to connect to your own self-hosted Monero node with the official Monero wallet and Cake Wallet, and you will be able to connect to your own self-hosted Monero LWS server with Edge Wallet and MyMonero.<!-- more -->
+![](../assets/images/monero-server-using-truenas/cover.webp)
+
+<small aria-hidden="true">Illustration: Jonah Aragon / Privacy Guides</small>
+
+In this guide, we will walk you through setting up a very powerful [Monero](https://www.privacyguides.org/en/cryptocurrency/#monero) server with TrueNAS. By completing these steps, you will be able to connect to your own self-hosted Monero node with the official Monero wallet and Cake Wallet, and you will be able to connect to your own self-hosted Monero LWS server with Edge Wallet and MyMonero.<!-- more -->
 
 <div class="admonition note" markdown>
 <p class="admonition-title">Guest Contributor</p>
 
-Please welcome Justin Ehrenhofer as a first-time guest contributor! Justin is the president of MAGIC Grants, a nonprofit which supports public cryptocurrency infrastructure and promotes privacy, and operates as Privacy Guides' [fiscal host](privacy-guides-partners-with-magic-grants-501-c-3.md). Privacy Guides does not publish guest posts in exchange for compensation, and this tutorial was independently edited and fact-checked by our editorial team prior to publication.
+Please welcome Justin Ehrenhofer as a first-time guest contributor! Justin is the president of MAGIC Grants, a nonprofit which supports public cryptocurrency infrastructure and promotes privacy, and operates as Privacy Guides' [fiscal host](privacy-guides-partners-with-magic-grants-501-c-3.md). Privacy Guides does not publish guest posts in exchange for compensation, and this tutorial was independently reviewed by our editorial team prior to publication.
 
 </div>
 
@@ -28,7 +31,7 @@ This guide assumes that you are using TrueNAS for the first time. TrueNAS is an 
 
 ## Advantages of Running Your Own Node
 
-Monero is a cryptocurrency with strong privacy properties by default, and it is the only cryptocurrency currently [recommended](https://www.privacyguides.org/en/cryptocurrency/#monero) by Privacy Guides.
+Monero is a cryptocurrency with strong privacy properties by default, and it is the only cryptocurrency currently [recommended](https://www.privacyguides.org/en/cryptocurrency/) by Privacy Guides.
 
 Despite Monero's privacy protections, your wallet needs to communicate with the rest of the Monero network. There are two main options:
 
