@@ -14,7 +14,7 @@ schema_type: AnalysisNewsArticle
 ---
 # Creating a Tricked-Out Monero Server with TrueNAS
 
-![](../assets/images/monero-server-using-truenas/cover.webp)
+![A cover image for this post showing an illustration of a NAS and stacks of coins imprinted with the Monero logo](../assets/images/monero-server-using-truenas/cover.webp)
 
 <small aria-hidden="true">Illustration: Jonah Aragon / Privacy Guides</small>
 
@@ -93,7 +93,7 @@ A dataset is effectively a folder inside a pool. We will make one folder for the
 5. Set the dataset preset to **Apps**.
 6. Click **Save**.
 
-![](../assets/images/monero-server-using-truenas/01-datasets.webp)
+![Screenshot showing the Datasets list in TrueNAS](../assets/images/monero-server-using-truenas/01-datasets.webp)
 
 Next, we will assign the ownership of that folder to the `apps` user:
 
@@ -219,7 +219,7 @@ We do not recommend shortening the tunnel lengths for the I2P SOCKS Proxy (in th
 
 You will see the three I2P Hidden Services that you configured. Under each, you will see a `.b32.i2p` address after **Destination:**. You will need to use the destination `.b32.i2p` addresses in later steps (just like the `.onion` addresses), so keep them handy.
 
-![](../assets/images/monero-server-using-truenas/06-i2p-settings.webp)
+![Screenshot showing I2P Hidden Services settings](../assets/images/monero-server-using-truenas/06-i2p-settings.webp)
 
 ## Configure Monero Node
 
