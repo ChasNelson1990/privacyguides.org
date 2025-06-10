@@ -89,7 +89,7 @@ A dataset is effectively a folder inside a pool. We will make one folder for the
 9. Check `Apply permissions recursively`.
 10. Click `Save Access Control List`.
 
-![Screenshot showing the ACL settings for monero-blockchain](https://minio.private.coffee/hedgedoc/uploads/574da43b-351c-4349-b607-7833d2d2132f.png)
+![Screenshot showing the ACL settings for monero-blockchain](../assets/images/monero-server-using-truenas/02-edit-acl.webp)
 
 ## Configure Arti (Tor)
 
@@ -116,11 +116,11 @@ Warning: Arti is experimental software. At the time of writing, Arti should not 
 
 You will see the Applications screen after it installs. After the Arti app shows the status as `Running`, click on the shell icon under Workloads and to the right of `arti – Running` (not `config` or `perms`).
 
-![Screenshot showing how to click the Arti shell icon](https://minio.private.coffee/hedgedoc/uploads/2863196c-04dd-4ac2-9bbd-a487b174d161.png)
+![Screenshot showing how to click the Arti shell icon](../assets/images/monero-server-using-truenas/03-arti-shell.webp)
 
 In the shell, type the command `arti hss --nickname monerodp2p onion-address`. This will return a string that ends in `.onion`. In notepad, Excel, or another app, save the `.onion` address and the service it is associated with (`monerodp2p`). You might need to copy from the shell with `Ctrl+Insert`.
 
-![Screenshot showing the command and response to get the onion address](https://minio.private.coffee/hedgedoc/uploads/cb3b4977-9a85-4085-8fb2-c846ef57d43f.png)
+![Screenshot showing the command and response to get the onion address](../assets/images/monero-server-using-truenas/04-arti-shell.webp)
 
 Do this again for the following two commands as well:
 
@@ -142,7 +142,7 @@ You should have three saved and unique `.onion` addresses.
 9. In the same newly exposed fields, set the Container Port as `4447`.
 10. Leave the other settings as default. Click `Install`.
 
-![Screenshot showing the I2P installation settings](https://minio.private.coffee/hedgedoc/uploads/8968b806-942d-415e-9aee-a4b538aea844.png)
+![Screenshot showing the I2P installation settings](../assets/images/monero-server-using-truenas/05-i2p-install.webp)
 
 You will see the Applications screen after it installs. After the Arti app shows the status as `Running`, open a browser and direct it to the I2P configuration wizard. This is available at `<hostname>:7657`, for example `192.168.1.100:7657`.
 
@@ -194,7 +194,7 @@ There is an optional step to reduce the hidden service tunnel length from the de
 
 You will see the three I2P Hidden Services that you configured. Under each, you will see a `.b32.i2p` address after `Destination:`. You will need to use the destination `.b32.i2p` addresses in later steps (just like the `.onion` addresses), so keep them handy.
 
-![](https://minio.private.coffee/hedgedoc/uploads/9c492682-de3e-4d56-a1b1-0d8919ffe905.png)
+![](../assets/images/monero-server-using-truenas/06-i2p-settings.webp)
 
 ## Configure Monero Node
 
@@ -220,13 +220,13 @@ It will take a day or more for most systems to fully sync the Monero blockchain 
 
 To check the status, go to the app page and click on the `monerod` app. Under Workloads and to the right of `monerod – Running`, click on the shell icon.
 
-![Screenshot showing how to click the Monero Node shell icon](https://minio.private.coffee/hedgedoc/uploads/bfceb639-ebcf-4d4f-a05d-5a2627fffaf5.png)
+![Screenshot showing how to click the Monero Node shell icon](../assets/images/monero-server-using-truenas/07-monero-shell.webp)
 
 Type `monerod status` and press enter.
 
 If the status reports `Height: ####/#### (100.0%) on mainnet`, then your node is fully synced. You can proceed to the next step.
 
-![Screenshot showing the Monero Node sync status command](https://minio.private.coffee/hedgedoc/uploads/70312f74-01e0-4dc9-9087-b188d43229f1.png)
+![Screenshot showing the Monero Node sync status command](../assets/images/monero-server-using-truenas/08-monero-shell.webp)
 
 ### Add Tor and I2P
 
@@ -248,7 +248,7 @@ After your Monero node is fully synced, click on the `monerod` app and then clic
 14. Under `I2P inbound port`, change the `Port Bind Mode` from `None` to `Publish port on the host for external access`.
 15. Click `Update`.
 
-![Screenshot showing the Monero Node install settings](https://minio.private.coffee/hedgedoc/uploads/ed446eeb-0ad5-4902-a901-74098c8db447.png)
+![Screenshot showing the Monero Node install settings](../assets/images/monero-server-using-truenas/09-monero-install.webp)
 
 ## Configure Monero LWS
 
