@@ -98,25 +98,30 @@ Next, we will assign the ownership of that folder to the `apps` user:
 
 ## Configure Arti (Tor)
 
-Warning: Arti is experimental software. At the time of writing, Arti should not be used for privacy-critical applications. In most circumstances, connecting to your own Monero node should be "low risk"; however, if you have very sensitive requirements, please do not use Arti until it has been further tested by the community. By using Arti today, you are helping to make Arti better!
+<div class="admonition example" markdown>
+<p class="admonition-title">Experimental software</p>
+
+Arti is experimental software. At the time of writing, Arti should not be used for privacy-critical applications. In most circumstances, connecting to your own Monero node should be "low risk"; however, if you have very sensitive requirements, please do not use Arti until it has been further tested by the community. By using Arti today, you are helping to make Arti better!
+
+</div>
 
 1. Click `Apps`.
 2. Click `Discover Apps`.
 3. Search for `Arti`. Click on the Arti app.
 4. Click `Install`. This will pull up a form.
 5. Under `Hidden Services`, click `Add`. For each of the functions below that you want to support, create a new hidden service:
-  a. Monero Node (for incoming P2P connections)
-    a. Name: `monerodp2p`
-    b. App Port: `18084`
-    c. Hidden Service Port: `18084`
-  b. Monero Node (for incoming RPC (wallet) connections)
-    a. Name: `monerodrpc`
-    b. App Port: `18089`
-    c. Hidden Service Port: `18089`
-  c. Monero LWS
-    a. Name: `monerolws`
-    b. App Port: `18090`
-    c. Hidden Service Port: `18090`
+    1. Monero Node (for incoming P2P connections)
+        1. Name: `monerodp2p`
+        2. App Port: `18084`
+        3. Hidden Service Port: `18084`
+    2. Monero Node (for incoming RPC (wallet) connections)
+        1. Name: `monerodrpc`
+        2. App Port: `18089`
+        3. Hidden Service Port: `18089`
+    3. Monero LWS
+        1. Name: `monerolws`
+        2. App Port: `18090`
+        3. Hidden Service Port: `18090`
 6. Leave the other settings as default. Click `Install`.
 
 You will see the Applications screen after it installs. After the Arti app shows the status as `Running`, click on the shell icon under Workloads and to the right of `arti – Running` (not `config` or `perms`).
@@ -129,8 +134,10 @@ In the shell, type the command `arti hss --nickname monerodp2p onion-address`. T
 
 Do this again for the following two commands as well:
 
-`arti hss --nickname monerodrpc onion-address`
-`arti hss --nickname monerolws onion-address`
+```console
+arti hss --nickname monerodrpc onion-address
+arti hss --nickname monerolws onion-address
+```
 
 You should have three saved and unique `.onion` addresses.
 
