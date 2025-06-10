@@ -151,7 +151,7 @@ You should have three saved and unique `.onion` addresses.
 
 1. Click **Apps**.
 2. Click **Discover Apps**.
-3. Search for `I2P`. Click on the I2P app.
+3. Search for `I2P`. Click on the **I2P** app.
 4. Click **Install**. This will pull up a form.
 5. Change the **Port Bind Mode** for **I2P HTTP Proxy Port** to `None`.
 6. Change the **Port Bind Mode** for **I2P HTTPS Proxy Port** to `None`.
@@ -220,7 +220,7 @@ You will see the three I2P Hidden Services that you configured. Under each, you 
 
 1. Click **Apps**.
 2. Click **Discover Apps**.
-3. Search for **Monero Node**. Click on the Monero Node app.
+3. Search for `Monero Node`. Click on the **Monero Node** app.
 4. Click **Install**. This will pull up a form.
 5. *Optional:* Uncheck **Prune the blockchain**. This will use significantly more storage.
 6. Under **Storage Configuration** and **Blockchain storage location**, change the **Type** from `ixVolume` to `Host Path`.
@@ -274,7 +274,7 @@ For security reasons, the Monero LWS app only accepts requests from allowlisted 
 
 1. Click **Apps**.
 2. Click **Discover Apps**.
-3. Search for `Monero LWS`. Click on the Monero LWS app.
+3. Search for `Monero LWS`. Click on the **Monero LWS** app.
 4. Click **Install**. This will pull up a form.
 5. Under **Accounts**, you can add sets of allowlisted Monero wallets that will be supported by this server. Click **Add** to add a wallet. For each wallet, include the `Address`, `View Key`, and `Restore Height`. If a restore height is not provided, it will scan the entire blockchain (which is thorough but inefficient).
 6. *Optional:* Under **Resources Configuration**, increase the CPU resource limits to as high of a value as possible for your system. This will help the server scan multiple wallets faster.
@@ -301,7 +301,7 @@ There are different ways to connect to your node over an encrypted clearnet conn
 
 1. Click **Apps**.
 2. Click **Discover Apps**.
-3. Search for `Nginx Proxy Manager`. Click on the Nginx Proxy Manager app.
+3. Search for `Nginx Proxy Manager`. Click on the **Nginx Proxy Manager** app.
 4. Click **Install**. This will pull up a form.
 5. Leave the settings as default. Click **Install**.
 
@@ -348,10 +348,6 @@ You should see a green dot next to this newly added node, and you should notice 
 
 ### Test with Edge Wallet
 
-Edge Wallet will connect to your Monero-LWS server. In Edge Wallet, click on the upper right hamburger menu, then **Settings**, then **Asset Settings**, then **Monero**. Select **Custom Light Wallet Server** and provide your `monerolws` onion address as follows:
-
-> <http://monerolws.onion:18090>
-
-Replace `monerolws.onion` with your correct onion address.
+Edge Wallet will connect to your Monero-LWS server. In Edge Wallet, click on the upper right hamburger menu, then **Settings**, then **Asset Settings**, then **Monero**. Select **Custom Light Wallet Server** and provide your `monerolws` onion address with the port. For example, `http://monerolws.onion:18090`, replacing `monerolws.onion` with your correct onion address.
 
 Back in the main wallet overview, you should see that your Monero wallet is fully synced.
