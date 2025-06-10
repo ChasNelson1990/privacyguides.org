@@ -9,7 +9,7 @@ tags:
     - TrueNAS
 authors:
     - justin
-description: In this guide, we will walk you through setting up a very powerful Monero server with TrueNAS
+description: In this guide, we will walk you through setting up a very powerful Monero server with TrueNAS.
 schema_type: AnalysisNewsArticle
 ---
 
@@ -20,7 +20,7 @@ In this guide, we will walk you through setting up a very powerful Monero server
 <div class="admonition note" markdown>
 <p class="admonition-title">Guest Contributor</p>
 
-Please welcome Justin as a first-time guest contributor! Justin Ehrenhofer is the president of MAGIC Grants, a nonprofit which supports public cryptocurrency infrastructure and promotes privacy, and operates as Privacy Guides' [fiscal host](privacy-guides-partners-with-magic-grants-501-c-3.md). Privacy Guides does not publish guest posts in exchange for compensation, and this article was independently edited and fact-checked by our editorial team prior to publication.
+Please welcome Justin as a first-time guest contributor! Justin Ehrenhofer is the president of MAGIC Grants, a nonprofit which supports public cryptocurrency infrastructure and promotes privacy, and operates as Privacy Guides' [fiscal host](privacy-guides-partners-with-magic-grants-501-c-3.md). Privacy Guides does not publish guest posts in exchange for compensation, and this tutorial was independently edited and fact-checked by our editorial team prior to publication.
 
 </div>
 
