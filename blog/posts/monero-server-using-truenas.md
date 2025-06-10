@@ -162,8 +162,9 @@ Complete the initial I2P wizard using the default settings.
 10. At the bottom and to the right of `New client tunnel:`, change the type in the dropdown from `Standard` to `SOCKS 4/4a/5` and click `Create`.
 11. Set the name as `monerod`.
 12. Check `Automatically start tunnel when router starts`.
-13. Set `Reachable by` to `0.0.0.0`.
-14. Click `Save`.
+13. Set the Access Point `Port` to `4447`.
+14. Set `Reachable by` to `0.0.0.0`.
+15. Click `Save`.
 
 ### Create I2P Hidden Services
 
