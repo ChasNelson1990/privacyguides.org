@@ -178,37 +178,41 @@ Complete the initial I2P wizard using the default settings.
 8. Click **Save**.
 9. To the right of the I2P HTTP Proxy, click **Stop**.
 10. At the bottom and to the right of **New client tunnel:**, change the type in the dropdown from `Standard` to `SOCKS 4/4a/5` and click **Create**.
-11. Set the name as `monerod`.
-12. Check **Automatically start tunnel when router starts**.
-13. Set the Access Point **Port** to `4447`.
-14. Set **Reachable by** to `0.0.0.0`.
-15. Click **Save**.
+    1. Set the name as `monerod`.
+    2. Check **Automatically start tunnel when router starts**.
+    3. Set the Access Point **Port** to `4447`.
+    4. Set **Reachable by** to `0.0.0.0`.
+    5. Click **Save**.
 
 ### Create I2P Hidden Services
 
-There is an optional step to reduce the hidden service tunnel length from the default of 3 to 1. This will substantially increase the reliability of the server at the cost of anonymity. However, the server's connection to the I2P network for connecting to Monero wallets and the rest of the Monero network is typically not sensitive, unless you want to completely conceal that you are running a Monero node. Thus, most users will prefer the higher performance of the shorter tunnel length. We do not recommend shortening the tunnel lengths for the I2P SOCKS Proxy (above), since transaction broadcasts tend to be sensitive.
+There is an optional step below to reduce the hidden service tunnel length from the default of 3 to 1. This will substantially increase the reliability of the server at the cost of anonymity.
+
+However, the server's connection to the I2P network for connecting to Monero wallets and the rest of the Monero network is typically not sensitive, unless you want to completely conceal that you are running a Monero node. Thus, most users will prefer the higher performance of the shorter tunnel length.
+
+We do not recommend shortening the tunnel lengths for the I2P SOCKS Proxy (in the previous section above) on the other hand, since transaction broadcasts tend to be sensitive.
 
 1. Under **I2P Hidden Services** and to the right of **New hidden service:**, change the type in the dropdown from `HTTP` to `Standard` and click **Create**.
-2. Set the name as `monerodp2p`.
-3. Check **Automatically start tunnel when router starts**.
-4. Set the target host as the server's hostname, for example `192.168.1.100`.
-5. Set the target port as `18085`.
-6. *Optional:* Set the Tunnel Length Option to **1 hop tunnel (low anonymity)** for better performance.
-7. Click **Save**.
-8. Create another `Standard` hidden service.
-9. Set the name as `monerodrpc`.
-10. Check **Automatically start tunnel when router starts**.
-11. Set the target host as the server's hostname, for example `192.168.1.100`.
-12. Set the target port as `18089`.
-13. *Optional:* Set the Tunnel Length Option to **1 hop tunnel (low anonymity)** for better performance.
-14. Click **Save**.
-15. Create another `Standard` hidden service.
-16. Set the name as `monerolws`.
-17. Check **Automatically start tunnel when router starts**.
-18. Set the target host as the server's hostname, for example `192.168.1.100`.
-19. Set the target port as `18090`.
-20. *Optional:* Set the Tunnel Length Option to **1 hop tunnel (low anonymity)** for better performance.
-21. Click **Save**.
+    1. Set the name as `monerodp2p`.
+    2. Check **Automatically start tunnel when router starts**.
+    3. Set the target host as the server's hostname, for example `192.168.1.100`.
+    4. Set the target port as `18085`.
+    5. *Optional:* Set the Tunnel Length Option to **1 hop tunnel (low anonymity)** for better performance.
+    6. Click **Save**.
+2. Create another `Standard` hidden service.
+    1. Set the name as `monerodrpc`.
+    2. Check **Automatically start tunnel when router starts**.
+    3. Set the target host as the server's hostname, for example `192.168.1.100`.
+    4. Set the target port as `18089`.
+    5. *Optional:* Set the Tunnel Length Option to **1 hop tunnel (low anonymity)** for better performance.
+    6. Click **Save**.
+3. Create another `Standard` hidden service.
+    1. Set the name as `monerolws`.
+    2. Check **Automatically start tunnel when router starts**.
+    3. Set the target host as the server's hostname, for example `192.168.1.100`.
+    4. Set the target port as `18090`.
+    5. *Optional:* Set the Tunnel Length Option to **1 hop tunnel (low anonymity)** for better performance.
+    6. Click **Save**.
 
 You will see the three I2P Hidden Services that you configured. Under each, you will see a `.b32.i2p` address after **Destination:**. You will need to use the destination `.b32.i2p` addresses in later steps (just like the `.onion` addresses), so keep them handy.
 
