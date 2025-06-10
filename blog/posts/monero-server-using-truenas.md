@@ -3,6 +3,10 @@ date:
     created: 2025-06-12T17:00:00Z
 categories:
     - Tutorials
+tags:
+    - Self-Hosting
+    - Cryptocurrency
+    - TrueNAS
 authors:
     - justin
 description: In this guide, we will walk you through setting up a very powerful Monero server with TrueNAS
@@ -13,6 +17,13 @@ schema_type: AnalysisNewsArticle
 
 In this guide, we will walk you through setting up a very powerful Monero server with TrueNAS. By completing these steps, you will be able to connect to your own self-hosted Monero node with the official Monero wallet and Cake Wallet, and you will be able to connect to your own self-hosted Monero LWS server with Edge Wallet and MyMonero.<!-- more -->
 
+<div class="admonition note" markdown>
+<p class="admonition-title">Guest Contributor</p>
+
+Please welcome Justin as a first-time guest contributor! Justin Ehrenhofer is the president of MAGIC Grants, a nonprofit which supports public cryptocurrency infrastructure and promotes privacy, and operates as Privacy Guides' [fiscal host](privacy-guides-partners-with-magic-grants-501-c-3.md). Privacy Guides does not publish guest posts in exchange for compensation, and this article was independently edited and fact-checked by our editorial team prior to publication.
+
+</div>
+
 This guide assumes that you are using TrueNAS for the first time. TrueNAS is an open-source operating system that is meant to function primarily as a NAS, and it supports running arbitrary Docker apps. [MAGIC Grants](https://magicgrants.org) spent the last few months making dedicated apps on the TrueNAS store to make this setup process simpler than staarting from scratch.
 
 ## Advantages of Running Your Own Node
@@ -21,7 +32,7 @@ Monero is a cryptocurrency with strong privacy properties by default, and it is 
 
 Despite Monero's privacy protections, your wallet needs to communicate with the rest of the Monero network. There are two main options: 1) connecting to someone else's node, or 2) connecting to your own node. By connecting to your own node, you do not need to reveal when you are using your wallet and what transactions you send to the node operator.
 
-By following this guide, your transaction broadcasts will by protected with the Tor and/or I2P networks.
+By following this guide, your transaction broadcasts will be protected with the Tor and/or I2P networks.
 
 In short, if you *can* run your own node, you *should* run your own node.
 
@@ -29,11 +40,11 @@ In short, if you *can* run your own node, you *should* run your own node.
 
 It's possible to undercut these recommendations, but please don't do that to yourself.
 
-* A spare machine (e.g., an old desktop computer).
-* At least one SSD with >100 GB of free space.
-* At least 4 CPU cores.
-* At least 4GB of RAM.
-* TrueNAS is already installed.
+* A spare machine (e.g., an old desktop computer) with:
+    * One or more SSDs with >100 GB of free space.
+    * 4+ CPU cores.
+    * 4GB+ of RAM.
+    * TrueNAS already installed.
 * A domain name (if you want to set up encrypted clearnet connections).
 
 ## What We Will Set Up
@@ -45,7 +56,7 @@ All of these applications are optional. You can set up nearly any combination of
 | Arti | A [Tor](https://www.privacyguides.org/en/advanced/tor-overview) client written in Rust. | Connect to Tor nodes, broadcast transactions over Tor, and connect to TrueNAS apps over Tor. |
 | Java I2P | The officially distributed app to connect to the [I2P network](https://www.privacyguides.org/en/alternative-networks/#i2p-the-invisible-internet-project). | Connect to I2P nodes, broadcast transactions over I2P, and connect to TrueNAS apps over I2P. |
 | Monero Node | The officially distributed app for communicating with the Monero network. | The app provides the necessary information to send and receive Monero transactions. Most wallets (including the official Monero wallets and Cake Wallet) connect to Monero nodes. |
-| Monero-LWS | A "**L**ight**W**eight **S**erver" that allows "lightweight" wallets to send and receive Monero transactions. | Lightweight Monero wallet apps (including Edge Wallet and MyMonero) can connect to this server so that the wallet itself does not need to scan/sync Monero history; the server handles this scanning/syncing. |
+| Monero-LWS | A "**L**ight**w**eight **S**erver" that allows "lightweight" wallets to send and receive Monero transactions. | Lightweight Monero wallet apps (including Edge Wallet and MyMonero) can connect to this server so that the wallet itself does not need to scan/sync Monero history; the server handles this scanning/syncing. |
 
 ## Configure TrueNAS Storage
 
@@ -65,7 +76,7 @@ In TrueNAS, a pool is a collection of hard drives for a specific use-case. For s
 
 ### Create a Monero Dataset
 
-A dataset is effectively a folder inside of a pool. We will make one folder for the Monero blockchain data and assign the ownership of that folder to the `apps` user.
+A dataset is effectively a folder inside a pool. We will make one folder for the Monero blockchain data and assign the ownership of that folder to the `apps` user.
 
 1. Click `Datasets`.
 2. Click on the `monero-pool` pool.
@@ -107,7 +118,7 @@ You will see the Applications screen after it installs. After the Arti app shows
 
 ![Screenshot showing how to click the Arti shell icon](https://minio.private.coffee/hedgedoc/uploads/2863196c-04dd-4ac2-9bbd-a487b174d161.png)
 
-In the shell, type the command `arti hss --nickname monerodp2p onion-address`. This will return a string that ends in `.onion`. In notepad, Excel, or another app, save the `.onion` address and the service it is associaated with (monerodp2p). You might need to copy from the shell with `Ctrl+Insert`.
+In the shell, type the command `arti hss --nickname monerodp2p onion-address`. This will return a string that ends in `.onion`. In notepad, Excel, or another app, save the `.onion` address and the service it is associated with (`monerodp2p`). You might need to copy from the shell with `Ctrl+Insert`.
 
 ![Screenshot showing the command and response to get the onion address](https://minio.private.coffee/hedgedoc/uploads/cb3b4977-9a85-4085-8fb2-c846ef57d43f.png)
 
@@ -135,7 +146,7 @@ You should have three saved and unique `.onion` addresses.
 
 You will see the Applications screen after it installs. After the Arti app shows the status as `Running`, open a browser and direct it to the I2P configuration wizard. This is available at `<hostname>:7657`, for example `192.168.1.100:7657`.
 
-Complete the intiial I2P wizard using the default settings.
+Complete the initial I2P wizard using the default settings.
 
 ### Create I2P SOCKS Proxy
 
@@ -218,15 +229,15 @@ If the status reports `Height: ####/#### (100.0%) on mainnet`, then your node is
 
 ### Add Tor and I2P
 
-After your Monero node is fully synced, click on the `monerod` app and then click `Edit`. This will bring up the same form that you congifured when installing the app.
+After your Monero node is fully synced, click on the `monerod` app and then click `Edit`. This will bring up the same form that you configured when installing the app.
 
 1. Check `Enable Tor connections`.
-2. Set the `Tor IP` as your hostname, for exaample `192.168.1.100`.
+2. Set the `Tor IP` as your hostname, for example `192.168.1.100`.
 3. Set the `Tor port` as `9150`.
 4. Check `Enable inbound Tor connections`.
 5. Set the `Inbound onion address` as the `.onion` address for `monerodp2p` that you observed earlier.
 6. Check `Enable inbound I2P connections`.
-7. Set the `I2P IP` as your hostname, for exaample `192.168.1.100`.
+7. Set the `I2P IP` as your hostname, for example `192.168.1.100`.
 8. Set the `I2P Port` as `4447`.
 9. Check `Enable inbound I2P connections`.
 10. Set the `Inbound I2P base32 address` as the `.b32.i2p` address for `monerodp2p` that you observed earlier.
@@ -254,7 +265,7 @@ You can add new Monero wallets in the future by adding them to the list of accou
 
 ## Configure Secure Clearnet Connections
 
-It is insecure to ccnnect your wallet to your server over an unencrypted connection.
+It is insecure to connect your wallet to your server over an unencrypted connection.
 
 If you only configure your wallet to connect to your server over its I2P or Tor addresses, then you're all set. The connection is already encrypted.
 
@@ -298,7 +309,7 @@ You should now be able to access these services using your domain!
 
 ## A Note About Clearnet Networking
 
-Making clearnet connections without encryption (without SSL/TLS) is insecure. This guide uses the Nginx Proxy Manager app to configure these secure connections, but you can alternatively use another approach such as Cloudflare Tunnels, Tailscale, or Wireguard.
+Making clearnet connections without encryption (without SSL/TLS) is insecure. This guide uses the Nginx Proxy Manager app to configure these secure connections, but you can alternatively use another approach such as Cloudflare Tunnels, Tailscale, or WireGuard.
 
 ## What About Bitcoin?
 
@@ -312,7 +323,7 @@ Use `Full Device VPN` mode with Orbot for this guide.
 
 ### Test with Cake Wallet
 
-Cake Wallet will connect to your Monero node. Follow [these steps](https://docs.cakewallet.com/features/advanced/tor-with-orbot/#switch-back-to-cake-wallet) to change the Monero node that Cake Wallet uses. Provide your `monerodrpc` onion address for the Monero Node app as the node address, `18089` as the port, no username, no password, and `Use SSL` unticked.
+Cake Wallet will connect to your Monero node. Follow [these steps](https://docs.cakewallet.com/features/advanced/tor-with-orbot/#switch-back-to-cake-wallet) to change the Monero node that Cake Wallet uses. Provide your `monerodrpc` onion address for the Monero Node app as the node address, `18089` as the port, no username, no password, and `Use SSL` unchecked.
 
 You should see a green dot next to this newly added node, and you should notice that your wallet is able to sync. Syncing performance to a Monero node over Tor is slow.
 
