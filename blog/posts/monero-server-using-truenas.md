@@ -13,7 +13,7 @@ description: In this guide, we will walk you through setting up a very powerful 
 schema_type: AnalysisNewsArticle
 ---
 
-# Create a Tricked-Out Monero Server with TrueNAS
+# Creating a Tricked-Out Monero Server with TrueNAS
 
 In this guide, we will walk you through setting up a very powerful Monero server with TrueNAS. By completing these steps, you will be able to connect to your own self-hosted Monero node with the official Monero wallet and Cake Wallet, and you will be able to connect to your own self-hosted Monero LWS server with Edge Wallet and MyMonero.<!-- more -->
 
@@ -41,11 +41,11 @@ In short, if you *can* run your own node, you *should* run your own node.
 It's possible to undercut these recommendations, but please don't do that to yourself.
 
 * A spare machine (e.g., an old desktop computer) with:
-    * One or more SSDs with >100 GB of free space.
-    * 4+ CPU cores.
-    * 4GB+ of RAM.
-    * TrueNAS already installed.
-* A domain name (if you want to set up encrypted clearnet connections).
+    * One or more SSDs with >100 GB of free space
+    * 4+ CPU cores
+    * 4GB+ of RAM
+    * TrueNAS already installed
+* A domain name (optional, for encrypted clearnet connections)
 
 ## What We Will Set Up
 
