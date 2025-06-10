@@ -76,18 +76,23 @@ In TrueNAS, a pool is a collection of hard drives for a specific use-case. For s
 
 ### Create a Monero Dataset
 
-A dataset is effectively a folder inside a pool. We will make one folder for the Monero blockchain data and assign the ownership of that folder to the `apps` user.
+A dataset is effectively a folder inside a pool. We will make one folder for the Monero blockchain data:
 
 1. Click `Datasets`.
 2. Click on the `monero-pool` pool.
 3. Click `Add Dataset`.
 4. Pick `monero-blockchain` for the Name and set the Dataset Preset to `Apps`.
 5. Click `Save`.
-6. While the `monero-blockchain` dataset is selected, click `Edit` under Permissions.
-7. At the top, change the owner and owner group from `root` to `apps`.
-8. Check the boxes for `Apply Owner` and `Apply Group`.
-9. Check `Apply permissions recursively`.
-10. Click `Save Access Control List`.
+
+![](../assets/images/monero-server-using-truenas/01-datasets.webp)
+
+Next, we will assign the ownership of that folder to the `apps` user:
+
+1. While the `monero-blockchain` dataset is selected, click `Edit` under Permissions.
+2. At the top, change the owner and owner group from `root` to `apps`.
+3. Check the boxes for `Apply Owner` and `Apply Group`.
+4. Check `Apply permissions recursively`.
+5. Click `Save Access Control List`.
 
 ![Screenshot showing the ACL settings for monero-blockchain](../assets/images/monero-server-using-truenas/02-edit-acl.webp)
 
